@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:decorate template="/tema/padrao.xhtml">
+        <ui:define name="centro">
+            <h:form id ="frmMinhasPsg" style="width: 95%">
+                <p:panel header="Minhas Passagens Reservadas" style="text-align:center"></p:panel>
+                <p:growl id="growl" showDetail="true"/>
+                <p:dataTable id="dataTable" var="psg" value="#{minhasPsg.passagens}"  
+                             paginator="true" rows="10"  
+                             paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                             rowsPerPageTemplate="5,10,15">
+                    <f:facet name="header">  
+                        Ajax Pagination  
+                    </f:facet>  
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Carana oferecida por:" />  
+                        </f:facet>  
+                        <h:outputText value="#{psg.anuncio.usuario.nome}" />  
+                    </p:column>  
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Telefone de Contato:" />  
+                        </f:facet>  
+                        <h:outputText value="#{psg.anuncio.usuario.telefone}" />  
+                    </p:column>  
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Local de Origem:" />  
+                        </f:facet>  
+                        <h:outputText value="#{psg.anuncio.trajeto.origem.endereco.rua.nome}" />  
+                    </p:column>  
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Dia:" />  
+                        </f:facet>  
+                        <h:outputText value="#{psg.anuncio.trajeto.origem.data}" />  
+                    </p:column> 
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Hora:" />  
+                        </f:facet>  
+                        <h:outputText value="#{psg.anuncio.trajeto.origem.hora}" />  
+                    </p:column> 
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Local de Destino:" />  
+                        </f:facet>  
+                        <h:outputText value="#{psg.anuncio.trajeto.destino.endereco.rua.nome}" />  
+                    </p:column>
+
+                    <p:column>  
+                        <f:facet name="header">  
+                            <h:outputText value="Mapa" />  
+                        </f:facet>  
+                        <p:commandButton actionListener="#{minhasPsg.mapDetail}" value="Abrir" 
+                                         update=":frmMinhasPsg" oncomplete="dlgMap.show()"/>
+                    </p:column>  
+                </p:dataTable>
+
+                <p:dialog widgetVar="dlgMap" width="625" height="400" modal="false">  
+                    <p:gmap center="#{minhasPsg.coordenada}" zoom="15" type="HYBRID"  
+                            model="#{minhasPsg.simpleModel}" style="width:600px;height:400px">  
+                        <p:ajax event="overlaySelect" listener="#{minhasPsg.onMarkerSelect}" update="growl" />
+                    </p:gmap>
+                </p:dialog>  
+
+            </h:form>
+        </ui:define>
+    </ui:decorate>
+</html>

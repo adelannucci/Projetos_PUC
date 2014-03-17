@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="left" >
+
+    <TextView
+        android:id="@+id/textIATA"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:text="@string/iata"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textAeroporto"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textIATA"
+        android:layout_marginTop="32dp"
+        android:text="@string/aeroporto"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textTaxaE"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textTaxaN"
+        android:layout_marginTop="36dp"
+        android:text="@string/te"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editTaxaE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textTaxaE"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+
+    <EditText
+        android:id="@+id/editTaxaN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textTaxaN"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editPais"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textPais"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textTaxaN"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/editPais"
+        android:text="@string/tn"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editCidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textCidade"
+        android:ems="10"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/textPais"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editCidade"
+        android:text="@string/pais"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textCidade"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textAeroporto"
+        android:layout_marginTop="38dp"
+        android:text="@string/cidade"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editAeroporto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textAeroporto"
+        android:ems="10"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editIata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textIATA"
+        android:ems="10"
+        android:inputType="text"
+        android:maxLength="3"> 
+        	<requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/btnInserirAlterarAeroporto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTaxaE"
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp" />
+
+</RelativeLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <ui:decorate template="/tema/padrao.xhtml">
+        <ui:define name="centro">
+            <h:form id ="frmMinhasCaronas" style="width: 95%">
+                <p:panel header="Minhas Caronas" style="text-align:center"></p:panel>
+                <p:dataGrid var="carona" value="#{minhasCaronas.anuncios}" columns="2"  
+                            rows="12" paginator="true"  
+                            paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"  
+                            rowsPerPageTemplate="9,12,15">  
+
+                    <p:panel header="#{carona.usuario.nome}" style="text-align:center">  
+                        <center>
+                            <h:panelGrid columns="2">  
+                                <p:panel header="Origem: #{carona.trajeto.origem.endereco.rua.nome}" style="text-align:center"> 
+                                    <h:panelGrid columns="2" style="width:180px"> 
+                                        <h:outputText value="Data:" />
+                                        <h:outputText value="#{carona.trajeto.origem.data}" />
+
+                                        <h:outputText value="Hora: " />
+                                        <h:outputText value="#{carona.trajeto.origem.hora}" />
+
+                                    </h:panelGrid> 
+                                    <p:commandButton actionListener="#{minhasCaronas.origemDetail}" value="Detalhes" 
+                                                     update=":frmMinhasCaronas" oncomplete="endDialog.show()" />
+
+                                </p:panel> 
+
+                                <p:panel header="Destino: #{carona.trajeto.destino.endereco.rua.nome}" style="text-align:center"> 
+                                    <h:panelGrid columns="2" style="width:180px"> 
+                                        <h:outputText value="Data:" />
+                                        <h:outputText value="#{carona.trajeto.destino.data}" />
+
+                                        <h:outputText value="Hora: " />
+                                        <h:outputText value="#{carona.trajeto.destino.hora}" />
+                                    </h:panelGrid> 
+
+                                    <p:commandButton actionListener="#{minhasCaronas.destinoDetail}" value="Detalhes" 
+                                                     update=":frmMinhasCaronas" oncomplete="endDialog.show()"/>
+                                </p:panel> 
+                            </h:panelGrid>  
+                        </center>
+                    </p:panel>  
+                </p:dataGrid>  
+                
+                <p:dialog header="Endereco" widgetVar="endDialog" modal="false">  
+                    <p:outputPanel id="endDetail" style="text-align:center;"> 
+
+                        <h:panelGrid  columns="2" cellpadding="5" style="alignment-adjust: central">
+
+                            <p:panel header="Dados do Anunciante" id="pnlDialogAnunciante" style="text-align:center; width:320px; height:170px;">
+                                <h:panelGrid  columns="2" cellpadding="5">  
+                                    <h:outputLabel for="ancDialo" value="Nome: " />  
+                                    <h:outputText id="ancDialo" value="#{minhasCaronas.ancSelected.usuario.nome}" />
+
+                                    <h:outputLabel for="telDialog" value="Telefone: " />  
+                                    <h:outputText id="telDialog" value="#{minhasCaronas.ancSelected.usuario.telefone}" />
+
+                                    <h:outputLabel for="emailDialog" value="Nome: " />  
+                                    <h:outputText id="emailDialog" value="#{minhasCaronas.ancSelected.usuario.login}" />
+                                </h:panelGrid>
+                            </p:panel>
+
+                            <p:panel header="Endereço" id="pnlDialogEndereco" style="text-align:center; width:320px; height:170px;">
+                                <h:panelGrid  columns="2" cellpadding="5">  
+                                    <h:outputLabel for="cid" value="Cidade " />  
+                                    <h:outputText id="cid" value="#{minhasCaronas.endSelected.rua.bairro.cidade.nomeCidade}" /> 
+
+                                    <h:outputLabel for="bai" value="Bairro: " />  
+                                    <h:outputText id="bai" value="#{minhasCaronas.endSelected.rua.bairro.nomeBai}" /> 
+
+                                    <h:outputLabel for="end" value="Endereço" />  
+                                    <h:outputText id="end" value="#{minhasCaronas.endSelected.rua.nome}" />  
+
+                                    <h:outputLabel for="num" value="Numero: " />  
+                                    <h:outputText id="num" value="#{minhasCaronas.endSelected.numero}" />
+                                </h:panelGrid> 
+                            </p:panel>
+                        </h:panelGrid>
+
+                        <center>
+                            <p:growl id="growl" showDetail="true"/>  
+                            <p:gmap id="mapas" center="#{minhasCaronas.cordenadas()}" zoom="13" type="HYBRID" model="#{minhasCaronas.simpleModel}"  style="width:600px;height:400px;">  
+                                <p:ajax event="overlaySelect" listener="#{minhasCaronas.onMarkerSelect}" update="growl" />  
+                            </p:gmap>
+                        </center>
+
+                    </p:outputPanel>  
+                </p:dialog>
+
+            </h:form>
+        </ui:define>
+    </ui:decorate>
+</html>

@@ -1,0 +1,108 @@
+# depslib dependency file v1.0
+1367267005 source:c:\users\12647202\desktop\music\basico.c
+	"basico.h"
+
+1367264531 c:\users\12647202\desktop\music\basico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1367270373 source:c:\users\12647202\desktop\music\funclist.c
+	"funclist.h"
+
+1367270510 c:\users\12647202\desktop\music\funclist.h
+	"musicas.h"
+
+1367264531 c:\users\12647202\desktop\music\musicas.h
+	"basico.h"
+
+1367263905 source:c:\users\12647202\desktop\music\musicas.c
+	"musicas.h"
+
+1367270560 source:c:\users\12647202\desktop\music\principal.c
+	"principal.h"
+
+1367264455 c:\users\12647202\desktop\music\principal.h
+	"funclist.h"
+
+1368165168 source:e:\andre\puc\3_sem\estrutura de dados\projetos\music\basico.c
+	"basico.h"
+
+1368162190 e:\andre\puc\3_sem\estrutura de dados\projetos\music\basico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1368165448 source:e:\andre\puc\3_sem\estrutura de dados\projetos\music\funclist.c
+	"funclist.h"
+
+1368164442 e:\andre\puc\3_sem\estrutura de dados\projetos\music\funclist.h
+	"musicas.h"
+
+1368162598 e:\andre\puc\3_sem\estrutura de dados\projetos\music\musicas.h
+	"basico.h"
+
+1368163370 source:e:\andre\puc\3_sem\estrutura de dados\projetos\music\musicas.c
+	"musicas.h"
+
+1368164480 source:e:\andre\puc\3_sem\estrutura de dados\projetos\music\principal.c
+	"principal.h"
+
+1368048168 e:\andre\puc\3_sem\estrutura de dados\projetos\music\principal.h
+	"funclist.h"
+
+1368165448 source:j:\andre\puc\3_sem\estrutura de dados\projetos\music\funclist.c
+	"funclist.h"
+
+1368164442 j:\andre\puc\3_sem\estrutura de dados\projetos\music\funclist.h
+	"musicas.h"
+
+1368162598 j:\andre\puc\3_sem\estrutura de dados\projetos\music\musicas.h
+	"basico.h"
+
+1368162190 j:\andre\puc\3_sem\estrutura de dados\projetos\music\basico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1368163370 source:j:\andre\puc\3_sem\estrutura de dados\projetos\music\musicas.c
+	"musicas.h"
+
+1368164480 source:j:\andre\puc\3_sem\estrutura de dados\projetos\music\principal.c
+	"principal.h"
+
+1368048168 j:\andre\puc\3_sem\estrutura de dados\projetos\music\principal.h
+	"funclist.h"
+
+1368165168 source:j:\andre\puc\3_sem\estrutura de dados\projetos\music\basico.c
+	"basico.h"
+
+1368165001 source:c:\users\adelannucci\desktop\music\funclist.c
+	"funclist.h"
+
+1368164440 c:\users\adelannucci\desktop\music\funclist.h
+	"musicas.h"
+
+1368162597 c:\users\adelannucci\desktop\music\musicas.h
+	"basico.h"
+
+1368162188 c:\users\adelannucci\desktop\music\basico.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<time.h>
+
+1368163369 source:c:\users\adelannucci\desktop\music\musicas.c
+	"musicas.h"
+
+1368164479 source:c:\users\adelannucci\desktop\music\principal.c
+	"principal.h"
+
+1368048168 c:\users\adelannucci\desktop\music\principal.h
+	"funclist.h"
+
+1368165167 source:c:\users\adelannucci\desktop\music\basico.c
+	"basico.h"
+

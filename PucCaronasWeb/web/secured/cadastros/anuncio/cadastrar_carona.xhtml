@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:pe="http://primefaces.org/ui/extensions">
+    <ui:decorate template="/tema/padrao.xhtml">
+        <ui:define name="centro">
+            <h:form id ="frmAnc">  
+
+                <p:messages id="msgAnc" />
+
+                <p:panel id="panel" header="Novo Anúncio" > 
+                    <h:panelGrid columns="2" cellpadding="2">
+
+                        <h:outputLabel for="vagas" value="Vagas: " />  
+                        <p:selectOneMenu id="vagas" value="#{anuncio.vagas}"> 
+                            <f:selectItem itemLabel="1 Vaga " itemValue="1" />  
+                            <f:selectItem itemLabel="2 Vagas" itemValue="2" />  
+                            <f:selectItem itemLabel="3 Vagas" itemValue="3" />  
+                            <f:selectItem itemLabel="4 Vagas" itemValue="4" />  
+                        </p:selectOneMenu>
+
+                        <h:outputLabel for="preco" value="Preco: " />  
+                        <pe:inputNumber id="preco" value="#{anuncio.preco}"  symbol="R$ " /> 
+                    </h:panelGrid>
+
+
+                    <h:panelGrid columns="2" cellpadding="2">
+                        <p:panel id="pnlOrg" header="Origem">  
+                            <h:panelGrid columns="2" cellpadding="5"> 
+                                <h:outputText value="CEP " />    
+                                <p:inputMask value="#{anuncio.cepOrg}" mask="99.999-999" required="false" />
+
+                                <h:outputText value="Cidade: " />    
+                                <p:keyboard value="#{anuncio.cidadeOrg}" />
+
+                                <h:outputText value="Bairro: " />    
+                                <p:keyboard value="#{anuncio.bairroOrg}" />
+
+                                <h:outputText value="Rua: " />    
+                                <p:keyboard value="#{anuncio.ruaOrg}" />
+
+                                <h:outputText value="Numero: " />    
+                                <p:keyboard value="#{anuncio.numOrg}" />
+
+                                <h:outputText value="Data e Hora: " />  
+                                <p:calendar value="#{anuncio.dataOrg}" pattern="dd/MM/yyyy hh:mm a" />  
+
+                            </h:panelGrid>
+                        </p:panel>
+
+                        <p:panel id="pnlDes" header="Destino">  
+                            <h:panelGrid columns="2" cellpadding="5"> 
+                                <h:outputText value="CEP " />    
+                                <p:inputMask value="#{anuncio.cepDes}" mask="99.999-999" required="false" />
+
+                                <h:outputText value="Cidade: " />    
+                                <p:keyboard value="#{anuncio.cidadeDes}" />
+
+                                <h:outputText value="Bairro: " />    
+                                <p:keyboard value="#{anuncio.bairroDes}" />
+
+                                <h:outputText value="Rua: " />    
+                                <p:keyboard value="#{anuncio.ruaDes}" />
+
+                                <h:outputText value="Numero: " />    
+                                <p:keyboard value="#{anuncio.numDes}" />
+
+                                <h:outputText value="Data e Hora: " />  
+                                <p:calendar value="#{anuncio.dataDes}" pattern="dd/MM/yyyy hh:mm a" /> 
+
+                            </h:panelGrid>
+                        </p:panel> 
+                    </h:panelGrid>  
+
+                    <p:panel id="pnlRota" visible="#{anuncio.gerarRota}">
+                        <p:commandButton value="Gerar Rota" update="frmAnc" actionListener="#{anuncio.gerarRota}"/>  
+                    </p:panel>
+                    <p:panel id="pnlConf" visible="#{anuncio.confimar}">
+                        <p:commandButton value="Confirmar" update="frmAnc" actionListener="#{anuncio.gerarAnuncio}"/>  
+                    </p:panel>
+
+                </p:panel>  
+
+            </h:form>
+        </ui:define>
+    </ui:decorate>
+</html>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"> 
+
+    <!-- <h:head>
+       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+       <title>Puc Caronas</title>
+       <style type="text/css">
+           body {background-color: #eeeeee; font-size: 12px}
+       </style> 
+   </h:head>
+   
+   <h:body> -->
+    <ui:composition template="/tema/padrao.xhtml">
+        <ui:define name="centro">
+            <h:form id="form">  
+                <p:growl id="growl" showDetail="true" sticky="true" /> 
+                <p:panel id="panel" header="Cadastro de Usuário" style="margin-bottom:10px;">  
+                    <p:messages id="messages" />  
+                    <h:panelGrid columns="2" cellpadding="5">  
+                        <h:outputText value="Login: " />    
+                        <p:keyboard value="#{usuario.login}" required="true" />    
+
+                        <h:outputText value="Senha: " />    
+                        <p:password value="#{usuario.pass}" feedback="true" required="true" />                                 
+
+                        <h:outputText value="Nome Completo: " />    
+                        <p:keyboard value="#{usuario.nome}" required="true"/>     
+
+                        <h:outputText value="Instituição de Ensino: " />  
+                        <p:keyboard value="#{usuario.faculdade}" required="true"/> 
+
+                        <h:outputText value="Registro Academico: " />  
+                        <p:inputMask value="#{usuario.ra}" required="true" mask="#9"/> 
+
+                        <h:outputText value="Telefone: " />  
+                        <p:inputMask value="#{usuario.telefone}" mask="(99) 999-9999" required="true"/>   
+                    </h:panelGrid>    
+                </p:panel>  
+
+                <p:commandButton value="Submit" update="panel, growl" actionListener="#{usuario.cadastrarUsuario}" styleClass="ui-priority-primary"/>  
+
+            </h:form>  
+            <!--</h:body>-->
+        </ui:define>
+    </ui:composition>
+
+</html>  

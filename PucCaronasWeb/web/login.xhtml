@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "htth://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"     
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Login form</title>
+    </h:head>
+    <h:body>  
+        <h:form id="frmLogin">
+            <p:panel header="Puc Caronas">
+                <h:graphicImage url="/imagens/carona.jpg" width="100%" height="96%"/>
+            </p:panel>
+            <p:panel id="panelLogin" header="Login" style="margin-bottom:10px;">  
+                <p:messages id="msgLogin" />  
+                <h:panelGrid columns="5" cellpadding="5" style="margin:0 auto;">  
+
+                    <h:outputText value="Login:"/>
+                    <p:inputText value="#{loginBean.username}" id="username"/>
+
+                    <h:outputText value="Password:"/>
+                    <p:password value="#{loginBean.password}" id="password"/>
+
+                    <p:commandButton id="btnLogin" value="Login" update="msgLogin" action="#{loginBean.doLogin}"/>
+                </h:panelGrid> 
+            </p:panel>
+        </h:form> 
+
+        <h:form id="frmCadastro"> 
+
+            <p:panel id="panelCadastro" header="Cadastro de Usuário" style="margin-bottom:10px;">  
+                <p:messages id="msgCadastro" /> 
+                <h:panelGrid columns="2" cellpadding="5" style="margin:0 auto;">  
+                    <h:outputText value="Login: " />    
+                    <p:keyboard value="#{usuario.login}" required="true" />    
+
+                    <h:outputText value="Senha: " />    
+                    <p:password value="#{usuario.pass}" feedback="true" required="true" />                                 
+
+                    <h:outputText value="Nome Completo: " />    
+                    <p:keyboard value="#{usuario.nome}" required="true"/>     
+
+                    <h:outputText value="Instituição de Ensino: " />  
+                    <p:keyboard value="#{usuario.faculdade}" required="true"/> 
+
+                    <h:outputText value="Registro Academico: " />  
+                    <p:inputMask value="#{usuario.ra}" required="true" mask="99999999"/> 
+
+                    <h:outputText value="Telefone: " />  
+                    <p:inputMask value="#{usuario.telefone}" mask="(99) 9999-9999" required="true"/>     
+                </h:panelGrid>
+                <center>
+                    <p:commandButton value="Cadastrar" update="frmCadastro" action="#{usuario.cadastrarUsuario}"/>
+                </center>
+            </p:panel>  
+        </h:form>  
+
+        <br/>
+        <p:commandLink action="#{navigationBean.redirectToInfo}" value="Info page"/>
+
+    </h:body>
+    
+</html>
+

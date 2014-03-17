@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TextView
+        android:id="@+id/textDistanciaVoo"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/distancia"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/editDistancia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textDistanciaVoo"
+        android:ems="10"
+        android:inputType="numberDecimal" >
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/editPreco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textPrecoVoo"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/textPrecoVoo"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/btnMudarDataVoo"
+        android:text="@string/preco"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textOrigem"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editPreco"
+        android:text="@string/origem"
+        android:textSize="16sp" />
+
+    <Spinner
+        android:id="@+id/cbxOrigem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textOrigem" />
+
+    <TextView
+        android:id="@+id/textDestinoVoo"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cbxOrigem"
+        android:text="@string/destino"
+        android:textSize="16sp" />
+
+    <Spinner
+        android:id="@+id/cbxDestino"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textDestinoVoo" />
+
+    <TextView
+        android:id="@+id/textStatusVoo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/cbxDestino"
+        android:text="@string/status" />
+
+    <Button
+        android:id="@+id/btnMudarHoraVoo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textPrecoVoo"
+        android:layout_marginLeft="16dp"
+        android:layout_toRightOf="@+id/btnMudarDataVoo"
+        android:contentDescription="@string/selectdate"
+        android:cropToPadding="true"
+        android:text="@string/setHora" />
+
+    <TextView
+        android:id="@+id/textDataVoo"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/editDistancia"
+        android:layout_marginTop="17dp"
+        android:layout_toLeftOf="@+id/btnMudarHoraVoo"
+        android:text="@string/dataHora"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textDataHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textDataVoo"
+        android:layout_alignBottom="@+id/textDataVoo"
+        android:layout_alignParentRight="true"
+        android:textIsSelectable="True"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/btnMudarDataVoo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textDataVoo"
+        android:contentDescription="@string/selectdate"
+        android:cropToPadding="true"
+        android:text="@string/setData" />
+
+    <Spinner
+        android:id="@+id/cbxStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textStatusVoo" />
+
+    <Button
+        android:id="@+id/btnInserirAlterarVoo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true" />
+
+</RelativeLayout>

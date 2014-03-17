@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AndroidSCV</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="pais">País</string>
+    <string name="cidade">Cidade</string>
+    <string name="iata">IATA</string>
+    <string name="tn">Taxa Nacional</string>
+    <string name="te">Taxa Estrangeiro</string>
+    <string name="aeroporto">Aeroporto</string>
+    
+    <string name="cia">Cia. Aerea</string>
+    <string name="distancia">Distância</string>
+    <string name="dataHora">Data e Hora</string>
+    <string name="preco">Preço</string>
+    <string name="destino">Destino</string>
+    <string name="origem">Origem</string>
+    <string name="status">Status</string>
+    
+    <string name="select">Select</string>
+    <string name="selectdate">Select Date</string>
+    <string name="setData">Escolher Data</string>
+    <string name="setHora">Escolher Hora</string>
+    
+
+</resources>
